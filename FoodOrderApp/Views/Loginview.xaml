@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Vm="clr-namespace:FoodOrderApp.ViewModels"
+    x:Class="FoodOrderApp.Views.Loginview">
+    
+    <ContentPage.BindingContext>
+        <Vm:LoginViewModel/>
+            
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <Grid Padding="20" VerticalOptions="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" VerticalOptions="Center"/>
+            <Image Source="lion"
+                   WidthRequest="100" HeightRequest="500"/>
+                   
+            <Label Text="Login Form"
+                   TextColor="Purple" FontSize="40" HorizontalOptions="Center"/>
+
+           <StackLayout Grid.Row="1" Spacing="10">
+            <Entry Placeholder="Enter Username" Text="{Binding Username}"/>
+            <Entry Placeholder="Enter Password" Text="{Binding Password}" IsPassword="True"/>
+
+            <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Purple"
+                    TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                    Command="{Binding LoginCommand}"/>
+
+            <Label Text="New Users :"/>
+
+            <Button Text="Register " HorizontalOptions="Center" BackgroundColor="DarkOrange"
+                    TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                    Command="{Binding RegisterCommand}"/>
+            </StackLayout>
+            </Grid>
+        </ContentPage.Content>
+            </ContentPage>
